@@ -1,142 +1,46 @@
-.header {
-  text-align: center;
-  margin-bottom: 10px;
+body {
+  padding: 0;
+  margin: 0%;
+  background: linear-gradient(45deg, #da1426, #010101); /*change this*/
 }
 
 .container {
-  display: block;
-  text-align: center;
-  height: 500px;
-  width: 400px;
-  margin: 0 auto;
-  border: 5px solid black;
+  display: grid;
+  justify-content: center;
+  align-content: center; /*find out why this changes button sizing*/
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(5, 100px);
+  min-height: 100vh;
 }
 
-#calc-display {
-  position: relative;
-  border: 1px solid black;
-  height: 80px;
-  width: 95%;
-  margin-top: 10px;
+.container > button {
+  font-size: 2rem;
+/*   border: 1px solid black; */
+  background-color: rgb(250, 150, 20);
 }
 
-#running-tally {
-  position: absolute;
-  right: 0;
-  top: 0;
+.container > button:hover {
+  background-color: rgba(0, 0, 0, .50);
+  color: rgba(245, 24, 24, .75);
 }
 
 .display {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  text-align: bottom;
+  grid-column: 1 / -1;
+  text-align: right;
+  background-color: rgba(0, 0, 0, .75);
+}
+
+.display .lower-output {
   font-size: 20px;
+  color: white;
+  margin-top: 50px;
 }
 
-#keypad {
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 20% 20% 20% 20% 20%;
-  grid-gap: 5px;
-  height: 350px;
-  width: 95%;
-  margin-top: 20px;
+.display .upper-output {
+  margin-top: 5px;
+  color: rgba(255, 255, 255, .75);
 }
 
-.numeric {
-  border: 1px solid black;
-  background-color: #000000;
-  color: #C60508;
-  font-size: 16px;
-}
-
-#number0 {
-  grid-column: 2;
-  grid-row: 5;
-}
-
-#number1 {
-  grid-column: 1;
-  grid-row: 4;
-}
-
-#number2 {
-  grid-column: 2;
-  grid-row: 4;
-}
-
-#number3 {
-  grid-column: 3;
-  grid-row: 4;
-}
-
-#number4 {
-  grid-column: 1;
-  grid-row: 3;
-}
-
-#number5 {
-  grid-column: 2;
-  grid-row: 3;
-}
-
-#number6 {
-  grid-column: 3;
-  grid-row: 3;
-}
-
-#number7 {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-#number8 {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-#number9 {
-  grid-column: 3;
-  grid-row: 2;
-}
-
-#division {
-  grid-column: 4;
-  grid-row: 1;
-}
-
-#multiplication {
-  grid-column: 4;
-  grid-row: 2;
-}
-
-#subtraction {
-  grid-column: 4;
-  grid-row: 3;
-}
-
-#addition {
-  grid-column: 4;
-  grid-row: 4;
-}
-
-.pos-neg {
-  grid-column: 1;
-  grid-row: 5;
-}
-
-.calculate {
-  grid-column: 4;
-  grid-row: 5;
-}
-
-.decimal {
-  grid-column: 3;
-  grid-row: 5;
-}
-
-.wipe {
-  grid-column: 1;
-  grid-row: 1;
+.span-two {
+  grid-column: span 2;
 }
